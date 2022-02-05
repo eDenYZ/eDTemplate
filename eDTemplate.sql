@@ -14,13 +14,12 @@ CREATE TABLE `users` (
   `dateofbirth` varchar(25) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `sex` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `height` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT '',
-  `skin` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `skin` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 ALTER TABLE `users`
   ADD UNIQUE KEY `identifier` (`identifier`),
   ADD UNIQUE KEY `identifier_2` (`identifier`);
-COMMIT;
 
 CREATE TABLE `items` (
 	`name` VARCHAR(50) NOT NULL,
