@@ -1,13 +1,12 @@
-CREATE DATABASE IF NOT EXISTS `eDTemplate`;
-USE `eDTemplate`;
-
 CREATE TABLE `users` (
 	`identifier` VARCHAR(60) NOT NULL,
 	`accounts` LONGTEXT NULL DEFAULT NULL,
 	`group` VARCHAR(50) NULL DEFAULT 'user',
 	`inventory` LONGTEXT NULL DEFAULT NULL,
 	`job` VARCHAR(20) NULL DEFAULT 'unemployed',
+	`job2` VARCHAR(20) NULL DEFAULT 'unemployed',
 	`job_grade` INT NULL DEFAULT 0,
+	`job_grade2` INT NULL DEFAULT 0,
 	`loadout` LONGTEXT NULL DEFAULT NULL,
 	`position` VARCHAR(255) NULL DEFAULT '{"x":-269.4,"y":-955.3,"z":31.2,"heading":205.8}',
 
