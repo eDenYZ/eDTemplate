@@ -1,18 +1,26 @@
 CREATE TABLE `users` (
-	`identifier` VARCHAR(60) NOT NULL,
-	`accounts` LONGTEXT NULL DEFAULT NULL,
-	`group` VARCHAR(50) NULL DEFAULT 'user',
-	`inventory` LONGTEXT NULL DEFAULT NULL,
-	`job` VARCHAR(20) NULL DEFAULT 'unemployed',
-	`job2` VARCHAR(20) NULL DEFAULT 'unemployed',
-	`job_grade` INT NULL DEFAULT 0,
-	`job_grade2` INT NULL DEFAULT 0,
-	`loadout` LONGTEXT NULL DEFAULT NULL,
-	`position` VARCHAR(255) NULL DEFAULT '{"x":-269.4,"y":-955.3,"z":31.2,"heading":205.8}',
-
-	PRIMARY KEY (`identifier`)
+  `identifier` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `accounts` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `group` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT 'user',
+  `inventory` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `job` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT 'unemployed',
+  `job_grade` int(11) DEFAULT 0,
+  `job2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'unemployed2',
+  `job2_grade` int(11) DEFAULT 0,
+  `loadout` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `position` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '{"x":-269.4,"y":-955.3,"z":31.2,"heading":205.8}',
+  `firstname` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `lastname` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `dateofbirth` varchar(25) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `sex` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `height` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `skin` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+ALTER TABLE `users`
+  ADD UNIQUE KEY `identifier` (`identifier`),
+  ADD UNIQUE KEY `identifier_2` (`identifier`);
+COMMIT;
 
 CREATE TABLE `items` (
 	`name` VARCHAR(50) NOT NULL,
@@ -50,3 +58,8 @@ CREATE TABLE `jobs` (
 
 
 INSERT INTO `jobs` VALUES ('unemployed','Unemployed');
+
+
+
+
+
