@@ -5,7 +5,7 @@ CREATE TABLE `users` (
   `inventory` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `job` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT 'unemployed',
   `job_grade` int(11) DEFAULT 0,
-  `job2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'unemployed2',
+  `job2` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT 'unemployed',
   `job2_grade` int(11) DEFAULT 0,
   `loadout` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `position` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '{"x":-269.4,"y":-955.3,"z":31.2,"heading":205.8}',
@@ -47,7 +47,6 @@ CREATE TABLE `job_grades` (
 
 
 INSERT INTO `job_grades` VALUES (1,'unemployed',0,'unemployed','Unemployed',200,'{}','{}');
-INSERT INTO `job_grades` VALUES (2,'unemployed2',0,'unemployed2','Unemployed',200,'{}','{}');
 
 CREATE TABLE `jobs` (
 	`name` VARCHAR(50) NOT NULL,
@@ -58,8 +57,6 @@ CREATE TABLE `jobs` (
 
 
 INSERT INTO `jobs` VALUES ('unemployed','Unemployed');
-INSERT INTO `jobs` VALUES ('unemployed2','Unemployed');
-
 
 
 
